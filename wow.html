@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SHOP</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background-color: orange;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .search-container img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 200px;
+            margin-right: 10px;
+            color: black;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .menu-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .menu-button div {
+            width: 20px;
+            height: 2px;
+            background-color: black;
+            margin-bottom: 4px;
+        }
+
+        .login-button,
+        .signup-button {
+            padding: 8px 16px;
+            margin-left: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .sale-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .sale-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .logo-separator {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .separator {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .small-logo {
+            width: 15px;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        .ad-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 250px;
+            margin: 20px 0;
+            background-color: lightgray;
+        }
+
+        .ad-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            justify-content: space-evenly;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .product img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .product-type {
+            font-weight: bold;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="shein.png" alt="Shein Logo" class="logo">
+            <div class="search-container">
+                <img src="search.png" alt="Search Logo">
+                <input type="text" id="searchBar" placeholder="Search...">
+            </div>
+        </div>
+        <div class="menu-container">
+            <button class="login-button">Log In</button>
+            <button class="signup-button">Sign Up</button>
+            <div class="menu-button" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sale-container">
+        <div class="logo-separator">
+            <img src="basket.png" alt="Basket Logo" class="small-logo">
+            <span class="separator">|</span>
+        </div>
+        <div class="sale-text">Flash Sale</div>
+        <div class="logo-separator">
+            <img src="gift.png" alt="Gift Logo" class="small-logo">
+        </div>
+        <div class="sale-text">E-Gift Cards</div>
+    </div>
+    <div class="ad-container">
+        <img src="bras.gif" alt="Ad" class="ad-image">
+    </div>
+    
+    <!-- Products Section -->
+    <div class="products-container">
+        <!-- Dress -->
+        <div class="product">
+            <div class="product-type">Dress</div>
+            <img src="dress.jpg" alt="Dress">
+        </div>
+
+        <!-- Bags -->
+        <div class="product">
+            <div class="product-type">Bag</div>
+            <img src="bag.png" alt="Bag">
+        </div>
+
+        <!-- Shoes -->
+        <div class="product">
+            <div class="product-type">Shoes</div>
+            <img src="shoes.png" alt="Shoes">
+        </div>
+
+        <!-- Accessories -->
+        <div class="product">
+            <div class="product-type">Accessories</div>
+            <img src="acc.png" alt="Accessories">
+        </div>
+
+        <!-- Jewelry -->
+        <div class="product">
+            <div class="product-type">Jewelry</div>
+            <img src="jewel.png" alt="Jewelry">
+        </div>
+
+        <!-- Beachwear -->
+        <div class="product">
+            <div class="product-type">Beachwear</div>
+            <img src="beach.png" alt="Beachwear">
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            if (menu.style.right === '0px') {
+                menu.style.right = '-200px';
+            } else {
+                menu.style.right = '0px';
+            }
+        }
+    </script>
+</body>
+</html>
